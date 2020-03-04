@@ -35,13 +35,6 @@ body {
       background-color: pink;
       cursor: pointer; }
 
-.calendar div:first-child {
-  margin-left: 606px; }
-
-.calendar div:nth-child(30),
-.calendar div:nth-child(31) {
-  display: none; }
-
 .calendar div:nth-child(1)::after {
   content: "1";
   font-family: Arial, sans-serif;
@@ -227,5 +220,35 @@ body {
   font-family: Arial, sans-serif;
   font-size: 30px;
   line-height: 100px; }
+
+.calendar-mon div:first-child {
+  margin-left: 0px; }
+
+.calendar-tue div:first-child {
+  margin-left: 101px; }
+
+.calendar-wed div:first-child {
+  margin-left: 202px; }
+
+.calendar-thu div:first-child {
+  margin-left: 303px; }
+
+.calendar-fri div:first-child {
+  margin-left: 404px; }
+
+.calendar-sat div:first-child {
+  margin-left: 505px; }
+
+.calendar-sun div:first-child {
+  margin-left: 606px; }
+
+.calendar-28 div:nth-child(n+29) {
+  display: none; }
+
+.calendar-29 div:nth-child(n+30) {
+  display: none; }
+
+.calendar-30 div:nth-child(n+31) {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
