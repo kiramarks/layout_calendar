@@ -1,3 +1,6 @@
+$week: ("mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6);
+$month: ("28": 29, "29": 30, "30": 31);
+
 body {
   margin: 0;
   display: flex;
@@ -29,20 +32,23 @@ body {
   }
 }
 
-.calendar div:first-child {
-  margin-left: 606px;
-}
-
-.calendar div:nth-child(30),
-.calendar div:nth-child(31) {
-  display: none;
-}
-
-@for $i from 1 through 31 {
-  .calendar div:nth-child(#{$i})::after {
-    content: "#{$i}";
+@for $day from 1 through 31 {
+  .calendar div:nth-child(#{$day})::after {
+    content: "#{$day}";
     font-family: Arial, sans-serif;
     font-size: 30px;
     line-height: 100px;
+  }
+}
+
+@each $day-week, $day in $week {
+  .calendar-#{$day-week} div:first-child {
+    margin-left: #{(100 * $day) + $day}px;
+  }
+}
+
+@each $day, $id in $month {
+  .calendar-#{$day} div:nth-child(n+#{$id}) {
+    display: none;
   }
 }
